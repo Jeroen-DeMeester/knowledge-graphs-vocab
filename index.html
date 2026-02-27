@@ -1,20 +1,102 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Knowledge Graphs Vocabulary</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rdflib/2.2.2/rdflib.min.js"></script>
+<style>
+table { width: 100%; border-collapse: collapse; margin-bottom: 2em; }
+th, td { border: 1px solid #ccc; padding: 0.5em; text-align: left; }
+</style>
+</head>
+<body>
 
 <h1>Knowledge Graphs Vocabulary</h1>
+<p>This vocabulary was created as part of the <strong>Knowledge Graphs</strong> course.</p>
 
-<p>
-This vocabulary was created as part of the Knowledge Graphs course.
-It defines classes and properties for describing persons and organizations.
-</p>
+<h2>Classes</h2>
+<table id="classes">
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Label (EN)</th>
+      <th>Label (NL)</th>
+      <th>Comment (EN)</th>
+      <th>Comment (NL)</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
 
-<h2>Namespace</h2>
+<h2>Properties</h2>
+<table id="properties">
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Label (EN)</th>
+      <th>Label (NL)</th>
+      <th>Comment (EN)</th>
+      <th>Comment (NL)</th>
+      <th>Domain</th>
+      <th>Range</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
 
-<p>
-<code>https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab#</code>
-</p>
+<script>
+const store = $rdf.graph();
+const fetcher = new $rdf.Fetcher(store);
+const ns = {
+  rdf: $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#"),
+  rdfs: $rdf.Namespace("http://www.w3.org/2000/01/rdf-schema#"),
+  jdm: $rdf.Namespace("https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab#")
+};
 
-<p>
-<a href="vocab.ttl">Download vocab.ttl</a>
-</p>
+// Load your Turtle vocab file
+fetcher.load('vocab.ttl').then(() => {
+  // Classes
+  const classesTbody = document.querySelector("#classes tbody");
+  store.each(undefined, ns.rdf('type'), ns.rdfs('Class')).forEach(cls => {
+    const term = cls.value.split('#')[1];
+    const labelEn = store.any(cls, ns.rdfs('label'), undefined, undefined)?.value || '';
+    const labelNl = store.any(cls, ns.rdfs('label'), undefined, undefined, 'nl')?.value || '';
+    const commentEn = store.any(cls, ns.rdfs('comment'), undefined)?.value || '';
+    const commentNl = store.any(cls, ns.rdfs('comment'), undefined, undefined, 'nl')?.value || '';
+    const row = `<tr>
+      <td>${term}</td>
+      <td>${labelEn}</td>
+      <td>${labelNl}</td>
+      <td>${commentEn}</td>
+      <td>${commentNl}</td>
+    </tr>`;
+    classesTbody.innerHTML += row;
+  });
+
+  // Properties
+  const propertiesTbody = document.querySelector("#properties tbody");
+  store.each(undefined, ns.rdf('type'), ns.rdf('Property')).forEach(prop => {
+    const term = prop.value.split('#')[1];
+    const labelEn = store.any(prop, ns.rdfs('label'), undefined)?.value || '';
+    const labelNl = store.any(prop, ns.rdfs('label'), undefined, undefined, 'nl')?.value || '';
+    const commentEn = store.any(prop, ns.rdfs('comment'), undefined)?.value || '';
+    const commentNl = store.any(prop, ns.rdfs('comment'), undefined, undefined, 'nl')?.value || '';
+    const domain = store.any(prop, ns.rdfs('domain'))?.value.split('#')[1] || '';
+    const range = store.any(prop, ns.rdfs('range'))?.value.split('#')[1] || '';
+    const row = `<tr>
+      <td>${term}</td>
+      <td>${labelEn}</td>
+      <td>${labelNl}</td>
+      <td>${commentEn}</td>
+      <td>${commentNl}</td>
+      <td>${domain}</td>
+      <td>${range}</td>
+    </tr>`;
+    propertiesTbody.innerHTML += row;
+  });
+});
+</script>
+
+</body>
+</html>
