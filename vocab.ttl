@@ -1,22 +1,37 @@
 @prefix jdm: <https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Class voor een menselijk individu
+# Class for a human individual
 jdm:Person a rdfs:Class ;
     rdfs:label "Person"@en ;
     rdfs:label "Persoon"@nl ;
     rdfs:comment "A human individual"@en ;
     rdfs:comment "Een menselijk individu"@nl .
 
-# Class voor een organisatie zoals een museum of bedrijf
+# Class for organizations such as museums or companies
 jdm:Organization a rdfs:Class ;
     rdfs:label "Organization"@en ;
     rdfs:label "Organisatie"@nl ;
     rdfs:comment "A group of people with a common purpose"@en ;
     rdfs:comment "Een groep mensen met een gemeenschappelijk doel"@nl .
 
-# Property om de naam van een persoon of organisatie aan te geven
+# Class for museums
+jdm:Museum a rdfs:Class ;
+    rdfs:label "Museum"@en ;
+    rdfs:label "Museum"@nl ;
+    rdfs:comment "A building where objects of historical, artistic, or scientific interest are displayed"@en ;
+    rdfs:comment "Een gebouw waarin objecten van historische, artistieke of wetenschappelijke waarde tentoongesteld worden"@nl .
+
+# Class for agents (people or organizations that act)
+jdm:Agent a rdfs:Class ;
+    rdfs:label "Agent"@en ;
+    rdfs:label "Agent"@nl ;
+    rdfs:comment "An entity that can perform actions"@en ;
+    rdfs:comment "Een entiteit die handelingen kan uitvoeren"@nl .
+
+# Property for the name of a person or organization
 jdm:name a rdf:Property ;
     rdfs:domain jdm:Person, jdm:Organization ;
     rdfs:range xsd:string ;
@@ -24,3 +39,48 @@ jdm:name a rdf:Property ;
     rdfs:label "naam"@nl ;
     rdfs:comment "The full name of a person or organization"@en ;
     rdfs:comment "De volledige naam van een persoon of organisatie"@nl .
+
+# Property for birth date of a person
+jdm:birthDate a rdf:Property ;
+    rdfs:domain jdm:Person ;
+    rdfs:range xsd:date ;
+    rdfs:label "birth date"@en ;
+    rdfs:label "geboortedatum"@nl ;
+    rdfs:comment "The date a person was born"@en ;
+    rdfs:comment "De datum waarop een persoon is geboren"@nl .
+
+# Property for knowing another person
+jdm:knows a rdf:Property ;
+    rdfs:domain jdm:Person ;
+    rdfs:range jdm:Person ;
+    rdfs:label "knows"@en ;
+    rdfs:label "kent"@nl ;
+    rdfs:comment "A person known by this person"@en ;
+    rdfs:comment "Een persoon die deze persoon kent"@nl .
+
+# Property for the workplace of a person
+jdm:worksAt a rdf:Property ;
+    rdfs:domain jdm:Person ;
+    rdfs:range jdm:Organization ;
+    rdfs:label "works at"@en ;
+    rdfs:label "werkt bij"@nl ;
+    rdfs:comment "The organization where a person works"@en ;
+    rdfs:comment "De organisatie waar een persoon werkt"@nl .
+
+# Property for hobbies
+jdm:hobby a rdf:Property ;
+    rdfs:domain jdm:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "hobby"@en ;
+    rdfs:label "hobby"@nl ;
+    rdfs:comment "A hobby or pastime of a person"@en ;
+    rdfs:comment "Een hobby of tijdsbesteding van een persoon"@nl .
+
+# Property for personal website
+jdm:website a rdf:Property ;
+    rdfs:domain jdm:Person ;
+    rdfs:range xsd:anyURI ;
+    rdfs:label "website"@en ;
+    rdfs:label "website"@nl ;
+    rdfs:comment "The URL of a person's website"@en ;
+    rdfs:comment "De URL van de website van een persoon"@nl .
