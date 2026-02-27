@@ -1,0 +1,26 @@
+@prefix jdm: <https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Class voor een menselijk individu
+jdm:Person a rdfs:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:label "Persoon"@nl ;
+    rdfs:comment "A human individual"@en ;
+    rdfs:comment "Een menselijk individu"@nl .
+
+# Class voor een organisatie zoals een museum of bedrijf
+jdm:Organization a rdfs:Class ;
+    rdfs:label "Organization"@en ;
+    rdfs:label "Organisatie"@nl ;
+    rdfs:comment "A group of people with a common purpose"@en ;
+    rdfs:comment "Een groep mensen met een gemeenschappelijk doel"@nl .
+
+# Property om de naam van een persoon of organisatie aan te geven
+jdm:name a rdf:Property ;
+    rdfs:domain jdm:Person, jdm:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "name"@en ;
+    rdfs:label "naam"@nl ;
+    rdfs:comment "The full name of a person or organization"@en ;
+    rdfs:comment "De volledige naam van een persoon of organisatie"@nl .
