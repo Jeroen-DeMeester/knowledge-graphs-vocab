@@ -3,10 +3,7 @@ layout: default
 title: Knowledge Graphs Vocabulary
 ---
 
-# Knowledge Graphs Vocabulary
-
-This is the RDF vocabulary I created for my Knowledge Graphs course exercise.  
-It defines the following **classes** and **properties**:
+This vocabulary defines the following **classes** and **properties**:
 
 ## Classes
 
