@@ -1,0 +1,26 @@
+@prefix jdm: <https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Personen
+jdm:Jeroen
+    a jdm:Person, jdm:Agent ;
+    jdm:name "Jeroen De Meester" ;
+    jdm:birthDate "1980-05-22"^^xsd:date ;
+    jdm:knows jdm:Digna, jdm:Minh ;
+    jdm:worksAt jdm:Rijksmuseum ;
+    jdm:hobby "Triatlon" ;
+    jdm:website <https://www.jeroendemeester.be> .
+
+jdm:Digna
+    a jdm:Person ;
+    jdm:name "Digna van Nielen" .
+
+jdm:Minh
+    a jdm:Person ;
+    jdm:name "Minh Tran" .
+
+# Organisatie / Museum
+jdm:Rijksmuseum
+    a jdm:Museum ;
+    jdm:name "Rijksmuseum Amsterdam" ;
+    jdm:website <https://www.rijksmuseum.nl> .
