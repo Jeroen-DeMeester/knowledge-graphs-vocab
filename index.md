@@ -8,7 +8,7 @@ This vocabulary defines the following **classes** and **properties**:
 ## Classes
 
 - `jdm:Person` – A human individual  
-- `jdm:Organization` – An organization such as a company, museum, ...  
+- `jdm:Organization` – An organization: a company, museum, ...  
 - `jdm:Museum` – A museum institution  
 
 ## Properties
