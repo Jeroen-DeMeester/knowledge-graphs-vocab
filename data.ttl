@@ -1,4 +1,6 @@
 @prefix jdm: <https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab#> .
+@prefix dgn: <https://digna-van-nielen.github.io/knowledge-graphs-vocab/vocab#> .
+@prefix mnh: <https://minh-tran.github.io/knowledge-graphs-vocab/vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Personen
@@ -6,16 +8,16 @@ jdm:Jeroen
     a jdm:Person, jdm:Agent ;
     jdm:name "Jeroen De Meester" ;
     jdm:birthDate "1980-05-22"^^xsd:date ;
-    jdm:knows jdm:Digna, jdm:Minh ;
+    jdm:knows dgn:Digna, mnh:Minh ;
     jdm:worksAt jdm:Rijksmuseum ;
     jdm:hobby "Triatlon" ;
     jdm:website <https://www.jeroendemeester.be> .
 
-jdm:Digna
+dgn:Digna
     a jdm:Person ;
     jdm:name "Digna van Nielen" .
 
-jdm:Minh
+mnh:Minh
     a jdm:Person ;
     jdm:name "Minh Tran" .
 
