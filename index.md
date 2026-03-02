@@ -22,3 +22,6 @@ This vocabulary defines the following **classes** and **properties**:
 
 ### Vocabulary file
 You can download or view the full vocabulary [here](vocab.ttl).
+
+## Data file
+You can download or view the full dataset here, containing instances of persons, organizations, and their relationships: [data.ttl](https://jeroen-demeester.github.io/knowledge-graphs-data/data.ttl)
