@@ -18,7 +18,7 @@ dgn:Digna
     jdm:knows jdm:Jeroen, mnh:Minh .
 
 mnh:Minh
-    a jdm:Person, mnh:human ;
+    a mnh:human ;
     mnh:name "Minh Tran" ;
     mnh:knows jdm:Jeroen, dgn:Digna .
 
