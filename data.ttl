@@ -9,7 +9,7 @@ jdm:Jeroen
     a jdm:Person ;
     jdm:name "Jeroen De Meester" ;
     jdm:birthDate "1980-05-22"^^xsd:date ;
-    jdm:knows dgn:Digna, mnh:Minh, lrs:LaurensTobias ;
+    jdm:knows dgn:Digna, mnh:Minh ;
     jdm:sameCourse dgn:Digna, mnh:Minh, lrs:LaurensTobias ;
     jdm:worksAt jdm:Rijksmuseum ;
     jdm:hobby "Triatlon" ;
@@ -19,21 +19,20 @@ jdm:Jeroen
 dgn:Digna
     a jdm:Person ;
     jdm:name "Digna van Nielen" ;
-    jdm:knows jdm:Jeroen, mnh:Minh, lrs:LaurensTobias ;
+    jdm:knows jdm:Jeroen, mnh:Minh ;
     jdm:sameCourse jdm:Jeroen, mnh:Minh, lrs:LaurensTobias .
 
 # Minh
 mnh:Minh
     a mnh:human ;
     mnh:name "Minh Tran" ;
-    mnh:knows jdm:Jeroen, dgn:Digna, lrs:LaurensTobias ;
+    mnh:knows jdm:Jeroen, dgn:Digna ;
     jdm:sameCourse jdm:Jeroen, dgn:Digna, lrs:LaurensTobias .
 
 # Tobias
 lrs:LaurensTobias
     a lrs:Person ;
     lrs:name "Laurens Tobias" ;
-    lrs:knows jdm:Jeroen, dgn:Digna, mnh:Minh ;
     jdm:sameCourse jdm:Jeroen, dgn:Digna, mnh:Minh .
 
 # Museum
