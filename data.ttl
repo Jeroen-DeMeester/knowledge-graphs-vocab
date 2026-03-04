@@ -1,6 +1,6 @@
 @prefix jdm: <https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab#> .
 @prefix dgn: <https://digna-van-nielen.github.io/knowledge-graphs-vocab/vocab#> .    # checken: en bij dgn:Digna eventueel jdm:name veranderen
-@prefix mnh: <https://minh-tran.github.io/knowledge-graphs-vocab/vocab#> .           # checken: en bij mnh:Minh eventueel jdm:name veranderen
+@prefix mnh: <https://minhphtran.github.io/knowledge-graphs-vocab/vocab#> .           # checken: en bij mnh:Minh eventueel jdm:name veranderen
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 jdm:Jeroen
@@ -19,8 +19,8 @@ dgn:Digna
 
 mnh:Minh
     a jdm:Person ;
-    jdm:name "Minh Tran" ;
-    jdm:knows jdm:Jeroen, dgn:Digna .
+    mnh:name "Minh Tran" ;
+    mnh:knows jdm:Jeroen, dgn:Digna .
 
 jdm:Rijksmuseum
     a jdm:Museum ;
