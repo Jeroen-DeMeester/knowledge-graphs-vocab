@@ -109,3 +109,13 @@ mnh:name
 
 mnh:knows 
     owl:equivalentProperty jdm:knows .
+
+# Alignments met Tobias
+lrs:Person
+    rdfs:subClassOf jdm:Person .
+
+lrs:name
+    owl:equivalentProperty jdm:name .
+
+lrs:knows
+    owl:equivalentProperty jdm:knows .
