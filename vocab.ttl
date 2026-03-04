@@ -22,7 +22,8 @@ jdm:Museum a rdfs:Class ;
     rdfs:label "Museum"@en ;
     rdfs:label "Museum"@nl ;
     rdfs:comment "A building or institution that collects, preserves, and exhibits objects of artistic, cultural, or scientific importance"@en ;
-    rdfs:comment "Een gebouw of instelling die objecten van artistiek, cultureel of wetenschappelijk belang verzamelt, bewaart en tentoonstelt"@nl .
+    rdfs:comment "Een gebouw of instelling die objecten van artistiek, cultureel of wetenschappelijk belang verzamelt, bewaart en tentoonstelt"@nl ;
+    rdfs:subClassOf jdm:Organization .
 
 # Property for the name of a person or organization
 jdm:name a rdf:Property ;
