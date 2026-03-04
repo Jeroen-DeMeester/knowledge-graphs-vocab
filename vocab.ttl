@@ -1,24 +1,29 @@
 @prefix jdm: <https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab#> .
+@prefix mnh: <https://minhphtran.github.io/knowledge-graphs-vocab/vocab#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 # Class representing a human individual
-jdm:Person a rdfs:Class ;
+jdm:Person
+    a rdfs:Class ;
     rdfs:label "Person"@en ;
     rdfs:label "Persoon"@nl ;
     rdfs:comment "A human individual"@en ;
     rdfs:comment "Een menselijk individu"@nl .
 
 # Class representing an organization, e.g., company, museum, NGO
-jdm:Organization a rdfs:Class ;
+jdm:Organization
+    a rdfs:Class ;
     rdfs:label "Organization"@en ;
     rdfs:label "Organisatie"@nl ;
     rdfs:comment "An organization such as a company, museum, NGO, or other group of people with a common purpose"@en ;
     rdfs:comment "Een organisatie zoals een bedrijf, museum, NGO of andere groep mensen met een gemeenschappelijk doel"@nl .
 
 # Class representing a museum
-jdm:Museum a rdfs:Class ;
+jdm:Museum
+    a rdfs:Class ;
     rdfs:label "Museum"@en ;
     rdfs:label "Museum"@nl ;
     rdfs:comment "A building or institution that collects, preserves, and exhibits objects of artistic, cultural, or scientific importance"@en ;
@@ -26,7 +31,8 @@ jdm:Museum a rdfs:Class ;
     rdfs:subClassOf jdm:Organization .
 
 # Property for the name of a person or organization
-jdm:name a rdf:Property ;
+jdm:name
+    a rdf:Property ;
     rdfs:domain jdm:Person, jdm:Organization ;
     rdfs:range xsd:string ;
     rdfs:label "name"@en ;
@@ -35,7 +41,8 @@ jdm:name a rdf:Property ;
     rdfs:comment "De volledige naam van een persoon of organisatie"@nl .
 
 # Property for birth date of a person
-jdm:birthDate a rdf:Property ;
+jdm:birthDate
+    a rdf:Property ;
     rdfs:domain jdm:Person ;
     rdfs:range xsd:date ;
     rdfs:label "birth date"@en ;
@@ -44,7 +51,8 @@ jdm:birthDate a rdf:Property ;
     rdfs:comment "De geboortedatum van een persoon"@nl .
 
 # Property to indicate acquaintances or relationships between people
-jdm:knows a rdf:Property ;
+jdm:knows 
+    a rdf:Property ;
     rdfs:domain jdm:Person ;
     rdfs:range jdm:Person ;
     rdfs:label "knows"@en ;
@@ -53,7 +61,8 @@ jdm:knows a rdf:Property ;
     rdfs:comment "Geeft aan dat een persoon een andere persoon kent"@nl .
 
 # Property to indicate employment or affiliation with an organization
-jdm:worksAt a rdf:Property ;
+jdm:worksAt
+    a rdf:Property ;
     rdfs:domain jdm:Person ;
     rdfs:range jdm:Organization ;
     rdfs:label "works at"@en ;
@@ -62,7 +71,8 @@ jdm:worksAt a rdf:Property ;
     rdfs:comment "Geeft aan bij welke organisatie een persoon werkt"@nl .
 
 # Property to indicate hobbies
-jdm:hobby a rdf:Property ;
+jdm:hobby 
+    a rdf:Property ;
     rdfs:domain jdm:Person ;
     rdfs:range xsd:string ;
     rdfs:label "hobby"@en ;
@@ -71,10 +81,21 @@ jdm:hobby a rdf:Property ;
     rdfs:comment "Een hobby of vrijetijdsactiviteit van een persoon"@nl .
 
 # Property to indicate a website
-jdm:website a rdf:Property ;
+jdm:website 
+    a rdf:Property ;
     rdfs:domain jdm:Person, jdm:Organization ;
     rdfs:range xsd:anyURI ;
     rdfs:label "website"@en ;
     rdfs:label "website"@nl ;
     rdfs:comment "The website of a person or organization"@en ;
     rdfs:comment "De website van een persoon of organisatie"@nl .
+
+# Alignments with Minh's vocab
+mnh:human 
+    rdfs:subClassOf jdm:Person .
+
+mnh:name 
+    owl:equivalentProperty jdm:name .
+
+mnh:knows 
+    owl:equivalentProperty jdm:knows .
