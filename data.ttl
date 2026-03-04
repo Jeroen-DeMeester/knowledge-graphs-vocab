@@ -1,27 +1,42 @@
 @prefix jdm: <https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab#> .
-@prefix dgn: <https://digna-van-nielen.github.io/knowledge-graphs-vocab/vocab#> .    # checken: en bij dgn:Digna eventueel jdm:name veranderen
+@prefix dgn: <https://digna-van-nielen.github.io/knowledge-graphs-vocab/vocab#> .
 @prefix mnh: <https://minhphtran.github.io/knowledge-graphs-vocab/vocab#> .
+@prefix lrs: <https://laurenstobias.com/vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+# Jeroen
 jdm:Jeroen
     a jdm:Person ;
     jdm:name "Jeroen De Meester" ;
     jdm:birthDate "1980-05-22"^^xsd:date ;
-    jdm:knows dgn:Digna, mnh:Minh ;
+    jdm:knows dgn:Digna, mnh:Minh, lrs:LaurensTobias ;
+    jdm:sameCourse dgn:Digna, mnh:Minh, lrs:LaurensTobias ;
     jdm:worksAt jdm:Rijksmuseum ;
     jdm:hobby "Triatlon" ;
     jdm:website <https://www.jeroendemeester.be> .
 
+# Digna
 dgn:Digna
     a jdm:Person ;
     jdm:name "Digna van Nielen" ;
-    jdm:knows jdm:Jeroen, mnh:Minh .
+    jdm:knows jdm:Jeroen, mnh:Minh, lrs:LaurensTobias ;
+    jdm:sameCourse jdm:Jeroen, mnh:Minh, lrs:LaurensTobias .
 
+# Minh
 mnh:Minh
     a mnh:human ;
     mnh:name "Minh Tran" ;
-    mnh:knows jdm:Jeroen, dgn:Digna .
+    mnh:knows jdm:Jeroen, dgn:Digna, lrs:LaurensTobias ;
+    jdm:sameCourse jdm:Jeroen, dgn:Digna, lrs:LaurensTobias .
 
+# Tobias
+lrs:LaurensTobias
+    a lrs:Person ;
+    lrs:name "Laurens Tobias" ;
+    lrs:knows jdm:Jeroen, dgn:Digna, mnh:Minh ;
+    jdm:sameCourse jdm:Jeroen, dgn:Digna, mnh:Minh .
+
+# Museum
 jdm:Rijksmuseum
     a jdm:Museum ;
     jdm:name "Rijksmuseum Amsterdam" ;
