@@ -70,6 +70,16 @@ jdm:worksAt
     rdfs:comment "Indicates the organization where a person works"@en ;
     rdfs:comment "Geeft aan bij welke organisatie een persoon werkt"@nl .
 
+# Property to indicate that two persons participate in the same course
+jdm:sameCourse
+    a rdf:Property ;
+    rdfs:domain jdm:Person ;
+    rdfs:range jdm:Person ;
+    rdfs:label "same course"@en ;
+    rdfs:label "zelfde cursus"@nl ;
+    rdfs:comment "Indicates that two persons participate in the same course"@en ;
+    rdfs:comment "Geeft aan dat twee personen aan dezelfde cursus deelnemen"@nl .
+    
 # Property to indicate hobbies
 jdm:hobby 
     a rdf:Property ;
