@@ -1,6 +1,6 @@
 @prefix jdm: <https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab#> .
 @prefix dgn: <https://digna-van-nielen.github.io/knowledge-graphs-vocab/vocab#> .    # checken: en bij dgn:Digna eventueel jdm:name veranderen
-@prefix mnh: <https://minhphtran.github.io/knowledge-graphs-vocab/vocab#> .           # checken: en bij mnh:Minh eventueel jdm:name veranderen
+@prefix mnh: <https://minhphtran.github.io/knowledge-graphs-vocab/vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 jdm:Jeroen
