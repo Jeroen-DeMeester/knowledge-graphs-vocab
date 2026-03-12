@@ -1,7 +1,7 @@
 @prefix : <https://jeroen-demeester.github.io/knowledge-graphs-vocab/data.ttl#> .
 @prefix jdm: <https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab.ttl#> .
 @prefix dgn: <https://digna-van-nielen.github.io/knowledge-graphs-vocab/vocab#> . # nog niet live, tijdelijke placeholder
-@prefix mnh: <https://minhphtran.github.io/knowledge-graphs-vocab/data.ttl#> .
+@prefix mnh: <https://minhphtran.github.io/knowledge-graphs-vocab/vocab.ttl#> .
 @prefix lrs: <https://laurenstobias.com/vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
