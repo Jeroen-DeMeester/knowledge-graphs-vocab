@@ -12,7 +12,7 @@
     jdm:birthDate "1980-05-22"^^xsd:date ;
     jdm:knows 
         dgn:Digna, 
-        mnh:Minh,
+        <https://minhphtran.github.io/knowledge-graphs-vocab/data.ttl#Minh>,
         <https://drsteiner.github.io/knowledgegraph/person.ttl#Steiny>;
     jdm:sameCourse dgn:Digna, mnh:Minh, lrs:LaurensTobias ;
     jdm:worksAt :Rijksmuseum ;
