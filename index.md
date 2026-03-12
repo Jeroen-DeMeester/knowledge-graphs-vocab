@@ -20,11 +20,6 @@ This vocabulary defines the following **classes** and **properties**:
 - `jdm:hobby` – A hobby or leisure activity of a person  
 - `jdm:website` – The website of a person or organization
 
-### External vocabularies
-This vocabulary uses or aligns with external vocabularies, e.g.:
-- mnh:human, mnh:name, mnh:knows from [Minh Tran's vocabulary](https://minhphtran.github.io/knowledge-graphs-vocab/vocab#)
-- lrs:Person, lrs:name, lrs:knows from [Tobias Laurens' vocabulary](https://laurenstobias.com/vocab#)
-
 ### Vocabulary file
 You can download or view the full vocabulary [here](vocab.ttl).
 
