@@ -10,7 +10,10 @@
     a jdm:Person ;
     jdm:name "Jeroen De Meester" ;
     jdm:birthDate "1980-05-22"^^xsd:date ;
-    jdm:knows dgn:Digna, mnh:Minh ;
+    jdm:knows 
+        dgn:Digna, 
+        mnh:Minh,
+        <https://drsteiner.github.io/knowledgegraph/person.ttl#Steiny>;
     jdm:sameCourse dgn:Digna, mnh:Minh, lrs:LaurensTobias ;
     jdm:worksAt :Rijksmuseum ;
     jdm:hobby "Triatlon" ;
