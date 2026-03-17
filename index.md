@@ -34,7 +34,6 @@ You can download or view the full vocabulary [here](vocab.ttl).
 
 ### Data file
 You can download or view the full dataset [here](data.ttl).
-
 It contains instances of persons, organizations, places, and photographs, and their relationships.
 
 ### Rules for FOAF reasoning
