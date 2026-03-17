@@ -58,7 +58,7 @@
     a jdm:Photograph ;
     jdm:title "Museum Exterior" ;
     jdm:hasPhotographer :Jeroen ;
-    jdm:depicts [] ;
+    jdm:depicts :Jeroen ;
     jdm:takenAt :Amsterdam ;
     jdm:description "Exterior view of the Rijksmuseum building." ;
     jdm:image <https://www.jeroendemeester.be/wp-content/uploads/demo2.jpg> .
