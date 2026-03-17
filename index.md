@@ -34,8 +34,9 @@ You can download or view the full vocabulary [here](vocab.ttl).
 
 ### Data file
 You can download or view the full dataset [here](data.ttl).
+
 It contains instances of persons, organizations, places, and photographs, and their relationships.
 
 ### Rules for FOAF reasoning
 To use FOAF-based queries and reasoning with a Notation3 reasoner like EYE, you can use the bridge rules defined in rules.n3.
-You can download or view the rules here: rules.n3
+You can download or view the rules [here](rules.n3).
