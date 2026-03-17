@@ -1,28 +1,28 @@
 @prefix jdm: <https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab.ttl#> .
-@prefix mnh: <https://minhphtran.github.io/knowledge-graphs-vocab/vocab.ttl#> .
-@prefix lrs: <https://laurenstobias.com/vocab#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-# Class representing a human individual
+# Classes
 jdm:Person
     a rdfs:Class ;
     rdfs:label "Person"@en ;
     rdfs:label "Persoon"@nl ;
     rdfs:comment "A human individual"@en ;
-    rdfs:comment "Een menselijk individu"@nl .
+    rdfs:comment "Een menselijk individu"@nl ;
+    rdfs:subClassOf foaf:Person ;
+    rdfs:subClassOf foaf:Agent .
 
-# Class representing an organization, e.g., company, museum, NGO
 jdm:Organization
     a rdfs:Class ;
     rdfs:label "Organization"@en ;
     rdfs:label "Organisatie"@nl ;
     rdfs:comment "An organization such as a company, museum, NGO, or other group of people with a common purpose"@en ;
-    rdfs:comment "Een organisatie zoals een bedrijf, museum, NGO of andere groep mensen met een gemeenschappelijk doel"@nl .
+    rdfs:comment "Een organisatie zoals een bedrijf, museum, NGO of andere groep mensen met een gemeenschappelijk doel"@nl ;
+    rdfs:subClassOf foaf:Organization ;
+    rdfs:subClassOf foaf:Agent .
 
-# Class representing a museum
 jdm:Museum
     a rdfs:Class ;
     rdfs:label "Museum"@en ;
@@ -31,7 +31,21 @@ jdm:Museum
     rdfs:comment "Een gebouw of instelling die objecten van artistiek, cultureel of wetenschappelijk belang verzamelt, bewaart en tentoonstelt"@nl ;
     rdfs:subClassOf jdm:Organization .
 
-# Property for the name of a person or organization
+jdm:Photograph
+    a rdfs:Class ;
+    rdfs:label "Photograph"@en ;
+    rdfs:label "Foto"@nl ;
+    rdfs:comment "A photograph taken by a photographer"@en ;
+    rdfs:comment "Een foto genomen door een fotograaf"@nl .
+
+jdm:Place
+    a rdfs:Class ;
+    rdfs:label "Place"@en ;
+    rdfs:label "Plaats"@nl ;
+    rdfs:comment "A location where something is situated or took place"@en ;
+    rdfs:comment "Een locatie waar iets zich bevindt of heeft plaatsgevonden"@nl .
+
+# Properties
 jdm:name
     a rdf:Property ;
     rdfs:domain jdm:Person, jdm:Organization ;
@@ -39,9 +53,9 @@ jdm:name
     rdfs:label "name"@en ;
     rdfs:label "naam"@nl ;
     rdfs:comment "The full name of a person or organization"@en ;
-    rdfs:comment "De volledige naam van een persoon of organisatie"@nl .
+    rdfs:comment "De volledige naam van een persoon of organisatie"@nl ;
+    rdfs:subPropertyOf foaf:name .
 
-# Property for birth date of a person
 jdm:birthDate
     a rdf:Property ;
     rdfs:domain jdm:Person ;
@@ -51,17 +65,16 @@ jdm:birthDate
     rdfs:comment "The birth date of a person"@en ;
     rdfs:comment "De geboortedatum van een persoon"@nl .
 
-# Property to indicate acquaintances or relationships between people
-jdm:knows 
+jdm:knows
     a rdf:Property ;
     rdfs:domain jdm:Person ;
     rdfs:range jdm:Person ;
     rdfs:label "knows"@en ;
     rdfs:label "kent"@nl ;
     rdfs:comment "Indicates that a person knows another person"@en ;
-    rdfs:comment "Geeft aan dat een persoon een andere persoon kent"@nl .
+    rdfs:comment "Geeft aan dat een persoon een andere persoon kent"@nl ;
+    rdfs:subPropertyOf foaf:knows .
 
-# Property to indicate employment or affiliation with an organization
 jdm:worksAt
     a rdf:Property ;
     rdfs:domain jdm:Person ;
@@ -71,7 +84,6 @@ jdm:worksAt
     rdfs:comment "Indicates the organization where a person works"@en ;
     rdfs:comment "Geeft aan bij welke organisatie een persoon werkt"@nl .
 
-# Property to indicate that two persons participate in the same course
 jdm:sameCourse
     a rdf:Property ;
     rdfs:domain jdm:Person ;
@@ -80,43 +92,78 @@ jdm:sameCourse
     rdfs:label "zelfde cursus"@nl ;
     rdfs:comment "Indicates that two persons participate in the same course"@en ;
     rdfs:comment "Geeft aan dat twee personen aan dezelfde cursus deelnemen"@nl .
-    
-# Property to indicate hobbies
-jdm:hobby 
+
+jdm:hobby
     a rdf:Property ;
     rdfs:domain jdm:Person ;
     rdfs:range xsd:string ;
     rdfs:label "hobby"@en ;
     rdfs:label "hobby"@nl ;
     rdfs:comment "A hobby or leisure activity of a person"@en ;
-    rdfs:comment "Een hobby of vrijetijdsactiviteit van een persoon"@nl .
+    rdfs:comment "Een hobby of vrijetijdsactiviteit van een persoon"@nl ;
+    rdfs:subPropertyOf foaf:interest .
 
-# Property to indicate a website
-jdm:website 
+jdm:website
     a rdf:Property ;
     rdfs:domain jdm:Person, jdm:Organization ;
     rdfs:range xsd:anyURI ;
     rdfs:label "website"@en ;
     rdfs:label "website"@nl ;
     rdfs:comment "The website of a person or organization"@en ;
-    rdfs:comment "De website van een persoon of organisatie"@nl .
+    rdfs:comment "De website van een persoon of organisatie"@nl ;
+    rdfs:subPropertyOf foaf:homepage .
 
-# Alignments with Minh's vocab
-mnh:human 
-    rdfs:subClassOf jdm:Person .
+# Photographs properties
+jdm:title
+    a rdf:Property ;
+    rdfs:domain jdm:Photograph ;
+    rdfs:range xsd:string ;
+    rdfs:label "title"@en ;
+    rdfs:label "titel"@nl ;
+    rdfs:comment "The title of a photograph"@en ;
+    rdfs:comment "De titel van een foto"@nl .
 
-mnh:name 
-    owl:equivalentProperty jdm:name .
+jdm:hasPhotographer
+    a rdf:Property ;
+    rdfs:domain jdm:Photograph ;
+    rdfs:range jdm:Person, jdm:Organization ;
+    rdfs:label "has photographer"@en ;
+    rdfs:label "heeft fotograaf"@nl ;
+    rdfs:comment "Indicates the photographer of a photograph"@en ;
+    rdfs:comment "Geeft de fotograaf van een foto aan"@nl .
 
-mnh:knows 
-    owl:equivalentProperty jdm:knows .
+jdm:depicts
+    a rdf:Property ;
+    rdfs:domain jdm:Photograph ;
+    rdfs:range jdm:Person ;
+    rdfs:label "depicts"@en ;
+    rdfs:label "beeldt af"@nl ;
+    rdfs:comment "Indicates which person is depicted in a photograph"@en ;
+    rdfs:comment "Geeft aan welke persoon op de foto staat"@nl .
 
-# Alignments with Tobias
-lrs:Person
-    rdfs:subClassOf jdm:Person .
+jdm:takenAt
+    a rdf:Property ;
+    rdfs:domain jdm:Photograph ;
+    rdfs:range jdm:Place ;
+    rdfs:label "taken at"@en ;
+    rdfs:label "genomen op"@nl ;
+    rdfs:comment "Indicates where the photograph was taken"@en ;
+    rdfs:comment "Geeft aan waar de foto genomen is"@nl .
 
-lrs:name
-    owl:equivalentProperty jdm:name .
+jdm:description
+    a rdf:Property ;
+    rdfs:domain jdm:Photograph ;
+    rdfs:range xsd:string ;
+    rdfs:label "description"@en ;
+    rdfs:label "beschrijving"@nl ;
+    rdfs:comment "A description of the photograph"@en ;
+    rdfs:comment "Een beschrijving van de foto"@nl .
 
-lrs:knows
-    owl:equivalentProperty jdm:knows .
+jdm:image
+    a rdf:Property ;
+    rdfs:domain jdm:Photograph ;
+    rdfs:range xsd:anyURI ;
+    rdfs:label "image"@en ;
+    rdfs:label "afbeelding"@nl ;
+    rdfs:comment "A link to the image file of the photograph"@en ;
+    rdfs:comment "Een link naar het afbeeldingsbestand van de foto"@nl .
