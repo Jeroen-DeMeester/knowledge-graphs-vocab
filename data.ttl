@@ -2,7 +2,6 @@
 @prefix jdm: <https://jeroen-demeester.github.io/knowledge-graphs-vocab/vocab.ttl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Jeroen
 :Jeroen
     a jdm:Person ;
     jdm:name "Jeroen De Meester" ;
@@ -17,8 +16,49 @@
     jdm:hobby "Triatlon" ;
     jdm:website <https://www.jeroendemeester.be> .
 
-# Rijksmuseum
 :Rijksmuseum
     a jdm:Museum ;
     jdm:name "Rijksmuseum Amsterdam" ;
     jdm:website <https://www.rijksmuseum.nl> .
+
+:Sportograf
+    a jdm:Organization ;
+    jdm:name "Sportograf" ;
+    jdm:website <https://www.sportograf.com> .
+
+:Amsterdam
+    a jdm:Place ;
+    jdm:name "Amsterdam" .
+
+:Lanzarote
+    a jdm:Place ;
+    jdm:name "Lanzarote" .
+
+# PHOTOGRAPHS
+
+:photo1
+    a jdm:Photograph ;
+    jdm:title "Finish Ironman Lanzarote" ;
+    jdm:hasPhotographer :Sportograf ;
+    jdm:depicts :Jeroen ;
+    jdm:takenAt :Lanzarote ;
+    jdm:description "Jeroen finishes second in his agegroup at Ironman Lanzarote." ;
+    jdm:image <https://www.jeroendemeester.be/wp-content/uploads/2025/05/13511_20250517_165719_493699142_original.jpg> .
+
+:photo2
+    a jdm:Photograph ;
+    jdm:title "Visit to the Rijksmuseum" ;
+    jdm:hasPhotographer :Jeroen ;
+    jdm:depicts :Jeroen ;
+    jdm:takenAt :Amsterdam ;
+    jdm:description "Photo taken during a visit to the Rijksmuseum." ;
+    jdm:image <https://www.jeroendemeester.be/wp-content/uploads/demo.jpg> .
+
+:photo3
+    a jdm:Photograph ;
+    jdm:title "Museum Exterior" ;
+    jdm:hasPhotographer :Jeroen ;
+    jdm:depicts [] ;
+    jdm:takenAt :Amsterdam ;
+    jdm:description "Exterior view of the Rijksmuseum building." ;
+    jdm:image <https://www.jeroendemeester.be/wp-content/uploads/demo2.jpg> .
