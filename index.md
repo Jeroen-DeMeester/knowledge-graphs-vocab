@@ -3,7 +3,13 @@ layout: default
 title: Knowledge Graphs Vocabulary
 ---
 
-This vocabulary defines the following **classes** and **properties**:
+This knowledge graph combines:
+
+- Vocabulary – the ontology defining classes and properties.
+
+- Data – instances of people, organizations, places, and photographs, and their relationships.
+
+- Rules for FOAF reasoning – bridge rules to map the custom jdm: vocabulary to the FOAF ontology for interoperability and querying.
 
 ## Classes
 
@@ -28,6 +34,8 @@ This vocabulary defines the following **classes** and **properties**:
 - `jdm:takenAt` – Indicates where the photograph was taken
 - `jdm:description` – A description of the photograph
 - `jdm:image` – A link to the image file of the photograph
+
+## Files
 
 ### Vocabulary file
 You can download or view the full vocabulary [here](vocab.ttl).
